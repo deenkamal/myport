@@ -1,0 +1,995 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Yusuf Kamal | Technology Instructor</title>
+
+    <style>
+        /* GENERAL STYLING */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #172b4d;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+        header {
+            background: #071a35;
+            color: white;
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: #20a4ff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        nav ul a {
+            color: white;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav ul a:hover {
+            color: #20a4ff;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, #071a35, #123d70);
+            color: white;
+            padding: 100px 0;
+        }
+
+        .hero-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .tag {
+            color: #38b6ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 5vw, 62px);
+            line-height: 1.15;
+            margin: 18px 0;
+        }
+
+        .hero h1 span {
+            color: #20a4ff;
+        }
+
+        .hero p {
+            color: #d5e4f6;
+            max-width: 620px;
+            margin-bottom: 25px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #087cff;
+            color: white;
+        }
+
+        .btn-outline {
+            border: 1px solid white;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
+        }
+
+        .hero-card {
+            width: 280px;
+            height: 280px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #20a4ff, #a5e1ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #071a35;
+            font-size: 75px;
+            font-weight: bold;
+            border: 6px solid #ffffff30;
+            box-shadow: 0 0 40px #20a4ff40;
+        }
+
+        /* GENERAL SECTIONS */
+        section {
+            padding: 75px 0;
+            scroll-margin-top: 70px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #102b50;
+            font-size: 34px;
+            margin-bottom: 8px;
+        }
+
+        .section-description {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 40px;
+        }
+
+        /* ABOUT SECTION */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .about-text h3 {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            color: #52647c;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            background: white;
+            border-left: 4px solid #087cff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 25px;
+        }
+
+        .skills-panel {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px #102b500d;
+        }
+
+        .skills-panel h3 {
+            margin-bottom: 20px;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .skill {
+            padding: 15px 5px;
+            background: #edf6ff;
+            color: #087cff;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            background: #087cff;
+            color: white;
+            transform: translateY(-4px);
+        }
+
+        /* COURSES */
+        .courses-section {
+            background: #eaf4ff;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .course-card {
+            background: white;
+            padding: 25px;
+            border-radius: 13px;
+            border: 1px solid #e0e9f5;
+            transition: 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 28px #102b5018;
+        }
+
+        .course-icon {
+            font-size: 36px;
+        }
+
+        .course-card h3 {
+            color: #123d70;
+            margin: 10px 0;
+        }
+
+        .course-card p {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .course-card a {
+            color: #087cff;
+            font-weight: bold;
+        }
+
+        /* PROJECTS */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border-top: 4px solid #087cff;
+            box-shadow: 0 5px 20px #102b500b;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .project-tech {
+            margin-top: 15px;
+            color: #087cff;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* WHY LEARN WITH ME */
+        .teaching-section {
+            background: #071a35;
+            color: white;
+        }
+
+        .teaching-section .section-title {
+            color: white;
+        }
+
+        .teaching-section .section-description {
+            color: #d5e4f6;
+        }
+
+        .teaching-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .teaching-card {
+            background: #102b50;
+            border: 1px solid #36506f;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .teaching-card h3 {
+            color: #38b6ff;
+            margin-bottom: 10px;
+        }
+
+        .teaching-card p {
+            color: #d5e4f6;
+        }
+
+        /* CONTACT SECTION */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+
+        .contact-info h3 {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            color: #52647c;
+            margin: 15px 0;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-info a {
+            color: #087cff;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px #102b500b;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+            border: 1px solid #d6e0ed;
+            border-radius: 7px;
+            font-family: inherit;
+            font-size: 15px;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: 2px solid #087cff;
+        }
+
+        .contact-form textarea {
+            height: 130px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 15px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #071a35;
+            color: #d5e4f6;
+            padding: 25px 15px;
+            text-align: center;
+        }
+
+        footer span {
+            color: #20a4ff;
+        }
+
+        footer a {
+            color: #20a4ff;
+        }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 850px) {
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-card {
+                width: 210px;
+                height: 210px;
+                font-size: 55px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .course-grid,
+            .project-grid,
+            .teaching-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            nav {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 550px) {
+            nav ul {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            nav ul a {
+                font-size: 13px;
+            }
+
+            .hero {
+                padding: 65px 0;
+            }
+
+            section {
+                padding: 55px 0;
+            }
+
+            .course-grid,
+            .project-grid,
+            .teaching-grid,
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#home" class="logo">
+                    Yusuf<span>Kamal</span>
+                </a>
+
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+
+            <div class="hero-text">
+
+                <p class="tag">
+                    FULL-STACK & TECHNOLOGY INSTRUCTOR
+                </p>
+
+                <h1>
+                    Learn Today,<br>
+                    <span>Build Your Tomorrow.</span>
+                </h1>
+
+                <p>
+                    Hello, I am Yusuf Kamal, a technology instructor
+                    passionate about teaching Full-Stack Web Development,
+                    Mobile App Development, Artificial Intelligence,
+                    Java and Python programming.
+
+                    I help learners understand programming through
+                    simple explanations, practical coding and
+                    real-world projects.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#courses" class="btn btn-primary">
+                        Explore My Courses →
+                    </a>
+
+                    <a href="#contact" class="btn btn-outline">
+                        Contact Me
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="hero-card">
+                YK
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT ME -->
+    <section id="about">
+        <div class="container">
+
+            <h2 class="section-title">About Me</h2>
+
+            <p class="section-description">
+                Making technology easier to learn, understand and apply.
+            </p>
+
+            <div class="about-content">
+
+                <div class="about-text">
+
+                    <h3>Meet Yusuf Kamal</h3>
+
+                    <p>
+                        I am a technology instructor committed to helping
+                        students and aspiring developers build practical
+                        programming skills.
+                    </p>
+
+                    <p>
+                        My areas of instruction include Full-Stack Web
+                        Development, Mobile App Development, Artificial
+                        Intelligence, Java and Python.
+                    </p>
+
+                    <p>
+                        I believe that learning programming should be
+                        practical and understandable. My approach
+                        emphasizes step-by-step explanations, hands-on
+                        exercises, problem-solving and application
+                        development.
+                    </p>
+
+                    <div class="highlight">
+                        <strong>My Mission</strong>
+
+                        <p>
+                            To empower learners with the technical
+                            knowledge and confidence to transform
+                            ideas into useful software applications.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="skills-panel">
+
+                    <h3>My Skills & Technologies</h3>
+
+                    <div class="skills">
+                        <div class="skill">HTML5</div>
+                        <div class="skill">CSS3</div>
+                        <div class="skill">JavaScript</div>
+                        <div class="skill">React</div>
+                        <div class="skill">Node.js</div>
+                        <div class="skill">Express</div>
+                        <div class="skill">MySQL</div>
+                        <div class="skill">Dart</div>
+                        <div class="skill">Flutter</div>
+                        <div class="skill">Python</div>
+                        <div class="skill">Java</div>
+                        <div class="skill">AI / ML</div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- COURSES -->
+    <section class="courses-section" id="courses">
+        <div class="container">
+
+            <h2 class="section-title">Courses I Teach</h2>
+
+            <p class="section-description">
+                Develop practical skills through structured,
+                hands-on technology training.
+            </p>
+
+            <div class="course-grid">
+
+                <div class="course-card">
+                    <div class="course-icon">🌐</div>
+
+                    <h3>Full-Stack Web Development</h3>
+
+                    <p>
+                        Learn HTML, CSS, JavaScript, React, Node.js,
+                        Express and MySQL to build complete web applications.
+                    </p>
+
+                    <a href="#contact">Enquire About This Course →</a>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon">📱</div>
+
+                    <h3>Mobile App Development</h3>
+
+                    <p>
+                        Learn Dart and Flutter to develop modern
+                        mobile applications for Android and other
+                        supported platforms.
+                    </p>
+
+                    <a href="#contact">Enquire About This Course →</a>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon">🤖</div>
+
+                    <h3>Artificial Intelligence</h3>
+
+                    <p>
+                        Explore AI concepts, machine learning,
+                        data processing and practical intelligent
+                        applications with Python.
+                    </p>
+
+                    <a href="#contact">Enquire About This Course →</a>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon">☕</div>
+
+                    <h3>Java Programming</h3>
+
+                    <p>
+                        Learn Java fundamentals, object-oriented
+                        programming, classes, objects and application
+                        development.
+                    </p>
+
+                    <a href="#contact">Enquire About This Course →</a>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon">🐍</div>
+
+                    <h3>Python Programming</h3>
+
+                    <p>
+                        Understand Python syntax, functions, data
+                        structures, file handling and web development.
+                    </p>
+
+                    <a href="#contact">Enquire About This Course →</a>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon">💻</div>
+
+                    <h3>Project-Based Training</h3>
+
+                    <p>
+                        Strengthen your skills by building practical
+                        applications, solving problems and developing
+                        a portfolio of projects.
+                    </p>
+
+                    <a href="#contact">Start Learning →</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <div class="container">
+
+            <h2 class="section-title">Featured Projects</h2>
+
+            <p class="section-description">
+                Practical application ideas across my teaching areas.
+            </p>
+
+            <div class="project-grid">
+
+                <div class="project-card">
+                    <h3>🌐 Student Registration System</h3>
+
+                    <p>
+                        A web application for registering students,
+                        storing information and retrieving records
+                        from a database.
+                    </p>
+
+                    <div class="project-tech">
+                        React · Node.js · MySQL
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>📱 Mobile Task Manager</h3>
+
+                    <p>
+                        A mobile application that helps users create
+                        tasks, organize activities and monitor progress.
+                    </p>
+
+                    <div class="project-tech">
+                        Dart · Flutter
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>🤖 AI Image Classifier</h3>
+
+                    <p>
+                        An image recognition application that
+                        demonstrates how machine learning models
+                        classify images.
+                    </p>
+
+                    <div class="project-tech">
+                        Python · TensorFlow
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>☕ Java Management System</h3>
+
+                    <p>
+                        A desktop application for organizing records,
+                        managing information and demonstrating
+                        object-oriented programming.
+                    </p>
+
+                    <div class="project-tech">
+                        Java · OOP · Database
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>🐍 Flask Web Application</h3>
+
+                    <p>
+                        A Python web application featuring multiple
+                        pages, user forms and database integration.
+                    </p>
+
+                    <div class="project-tech">
+                        Python · Flask · MySQL
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>🔐 Authentication System</h3>
+
+                    <p>
+                        A user management application demonstrating
+                        registration, login and secure password handling.
+                    </p>
+
+                    <div class="project-tech">
+                        Node.js · Express · MySQL
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TEACHING APPROACH -->
+    <section class="teaching-section">
+        <div class="container">
+
+            <h2 class="section-title">Why Learn With Me?</h2>
+
+            <p class="section-description">
+                Practical learning designed to help you grow.
+            </p>
+
+            <div class="teaching-grid">
+
+                <div class="teaching-card">
+                    <h3>01. Simple Explanations</h3>
+
+                    <p>
+                        Learn complex programming concepts through
+                        clear explanations and manageable steps.
+                    </p>
+                </div>
+
+                <div class="teaching-card">
+                    <h3>02. Hands-On Practice</h3>
+
+                    <p>
+                        Write code, test your understanding,
+                        solve problems and gain practical experience.
+                    </p>
+                </div>
+
+                <div class="teaching-card">
+                    <h3>03. Real-World Projects</h3>
+
+                    <p>
+                        Apply what you learn to useful projects
+                        that demonstrate your developing skills.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container">
+
+            <h2 class="section-title">Get In Touch</h2>
+
+            <p class="section-description">
+                Let's discuss your learning goals and technology journey.
+            </p>
+
+            <div class="contact-content">
+
+                <div class="contact-info">
+
+                    <h3>Let's Build Something Amazing</h3>
+
+                    <p>
+                        Are you interested in learning programming,
+                        joining a training session or discussing
+                        a technology project?
+                    </p>
+
+                    <p>
+                        📧 <strong>Email:</strong><br>
+                        <a href="mailto:deen2kamal@gmail.com">
+                            deen2kamal@gmail.com
+                        </a>
+                    </p>
+
+                    <p>
+                        📞 <strong>Phone:</strong><br>
+                        <a href="tel:09066329993">
+                            09066329993
+                        </a>
+                    </p>
+
+                    <p>
+                        💻 <strong>Areas of Training:</strong><br>
+                        Web Development, Mobile Apps, AI, Java and Python.
+                    </p>
+
+                    <div class="highlight">
+                        <strong>Ready to learn?</strong>
+
+                        <p>
+                            Contact me today to discuss your training
+                            interests and take the next step in your
+                            technology journey.
+                        </p>
+                    </div>
+
+                </div>
+
+                <form class="contact-form"
+                      action="mailto:deen2kamal@gmail.com"
+                      method="post"
+                      enctype="text/plain">
+
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Your Full Name"
+                        required>
+
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Your Email Address"
+                        required>
+
+                    <input
+                        type="text"
+                        name="subject"
+                        placeholder="Subject"
+                        required>
+
+                    <textarea
+                        name="message"
+                        placeholder="Write your message here..."
+                        required></textarea>
+
+                    <button type="submit" class="btn btn-primary">
+                        Send Message →
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            © 2026 Yusuf <span>Kamal</span>.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Learn Today. Build Tomorrow.
+        </p>
+
+        <p>
+            <a href="mailto:deen2kamal@gmail.com">
+                Contact Yusuf Kamal
+            </a>
+        </p>
+    </footer>
+
+</body>
+</html>
+
+
+
+
